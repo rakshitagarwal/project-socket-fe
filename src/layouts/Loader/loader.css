@@ -1,0 +1,19 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .demo {
+    background: #5d9cec;
+    padding: 20px;
+    margin-bottom: 20px;
+    z-index: auto;
+  }
+  
+  .demo button {
+    background-color: #4a89dc;
+    border: 0;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
