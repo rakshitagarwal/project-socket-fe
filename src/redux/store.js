@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from './user/userSlice'
+import { rootReducer } from "./reducer";
+import thunk from "redux-thunk";
 
-const store = configureStore({
-    reducer:{
-        // Multiple reducers add here
-        user: userReducer,
-    }
-})
-
-export default store;
+export const store = configureStore({
+  reducer: rootReducer,
+  devTools: process.env.NODE_ENV !== "production",
+  middleware: [thunk],
+});

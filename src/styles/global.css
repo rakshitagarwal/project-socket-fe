@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+
+
+
+.container {
+  max-width: 1600px;
+  width: 95%;
+}
+
+.slick-dots {
+  position: absolute !important;
+  bottom: 0 !important;
+}
+.slick-dots li {
+  margin: 0px -1px !important;
+}
+.rh5v-Overlay_inner {
+  border: 1px solid;
+  border-radius: 50% !important;
+  background: #0000004a;
+}
+
+.countdown-image {
+  background-image: url(../assets/images/countdown-image.png);
+  background-size: 1105% 100%;
+  background-position-y: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  background-color: transparent;
+  padding: 45px 40px;
+  line-height: 22px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 25px;
+  width: 133px;
+}
+.countdown-image span.counter-number {
+  font-size: 28px;
+  position: relative;
+  line-height: 40px;
+  text-decoration: none;
+}
+
+.countdown-image span.counter-number a:hover {
+  text-decoration: none;
+}
+
+.countdown-image-10 {
+  background-position-x: 0;
+}
+.countdown-image-9 {
+  background-position-x: 10%;
+}
+.countdown-image-8 {
+  background-position-x: 20%;
+}
+.countdown-image-7 {
+  background-position-x: 30%;
+}
+.countdown-image-6 {
+  background-position-x: 40%;
+}
+.countdown-image-5 {
+  background-position-x: 50%;
+}
+.countdown-image-4 {
+  background-position-x: 60%;
+}
+.countdown-image-3 {
+  background-position-x: 70%;
+}
+.countdown-image-2 {
+  background-position-x: 80%;
+}
+.countdown-image-1 {
+  background-position-x: 90%;
+}
+.countdown-image-0 {
+  background-position-x: 100%;
+}
+.countdown-image span.counter-number {
+  font-size: 28px;
+  position: relative;
+  line-height: 40px;
+}
+@layer components {
+  .btn {
+    @apply flex w-1/4 m-1  justify-center gap-2 items-center p-3 rounded-sm text-sm text-white bg-primary;
+  }
+}
+
+
+html, body, #root {
+  min-height: 100vh;
+}
