@@ -1,6 +1,7 @@
 "use client";
 
 import Banner from "@/components/common/Banner/Banner";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -12,6 +13,14 @@ const MyAuction = () => {
     Ongoing: "live-auction",
     Registered: "upcoming-auction",
   };
+
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "loading") {
+    return <></>;
+  }
 
   const tableData = [
     {

@@ -5,9 +5,18 @@ import InsufficientBal from "@/components/common/Modal/InsufficientBal";
 import BuyPlays from "@/components/common/Modal/BuyPlays";
 import PaymentMethod from "@/components/common/Modal/PaymentMethod";
 import PaymentConfirm from "@/components/common/Modal/PaymentConfirm";
+import { useSession } from "next-auth/react";
 
 const ModalDemo = () => {
   const [visible, setVisible] = useState(1);
+
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "loading") {
+    return <></>;
+  }
   return (
     <div>
       <h1>Home</h1>

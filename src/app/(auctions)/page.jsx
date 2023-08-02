@@ -15,9 +15,10 @@ function HomeDashboard() {
   if (status === "loading") {
     return <></>;
   }
-  if (!session) {
-    redirect("/login");
-  }
+  console.log("session",session)
+  // if (!session) {
+  //   redirect("/login");
+  // }
   return (
     <div>
       <div

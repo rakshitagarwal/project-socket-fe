@@ -7,9 +7,18 @@ import EndBar from "@/components/common/EndBar/EndBar";
 import TabHandler from "@/components/pages/UpcomingAuction/TabSection";
 import MessageTextCard from "@/components/common/Card/MessageCard/TextCard/MessageTextCard";
 import BidBarContainer from "@/components/common/BidBar/BidBarContainer";
+import { useSession } from "next-auth/react";
 
 export default function UpcomingAuctionPage() {
   const [countDown, setCountDown] = useState(10);
+
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "loading") {
+    return <></>;
+  }
 
   const [isRegistered, setRegistered] = useState(false);
 

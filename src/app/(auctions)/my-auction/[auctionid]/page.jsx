@@ -12,6 +12,7 @@ import BuyNow from "@/components/pages/LiveAuction/BuyNow";
 import MessageTextCard from "@/components/common/Card/MessageCard/TextCard/MessageTextCard";
 import TabHandler from "@/components/pages/MyAuctionTab/TabSection";
 import { useSearchParams } from 'next/navigation'
+import { useSession } from "next-auth/react";
 
 export default function LiveAuctionPage() {
   const [isBuyNowShow, setIsBuyNowShow] = useState(false);
@@ -19,6 +20,14 @@ export default function LiveAuctionPage() {
   const isSlider = true;
   const searchParams = useSearchParams()
   const search = searchParams.get('status')
+
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "loading") {
+    return <></>;
+  }
 
   const sliderData = [
     {

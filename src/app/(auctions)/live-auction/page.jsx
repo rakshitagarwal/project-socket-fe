@@ -11,11 +11,20 @@ import ItemsSlider from "@/components/ItemsSlider";
 import BuyNow from "@/components/pages/LiveAuction/BuyNow";
 import MessageTextCard from "@/components/common/Card/MessageCard/TextCard/MessageTextCard";
 import socket from "@/helpers/socket";
+import { useSession } from "next-auth/react";
 
 export default function LiveAuctionPage() {
   const [isBuyNowShow, setIsBuyNowShow] = useState(false);
   const [isLowBalance, setIsLowBalance] = useState(false);
   const isSlider = true;
+
+  const { data: session, status } = useSession({
+    required: true,
+  });
+
+  if (status === "loading") {
+    return <></>;
+  }
 
   const sliderData = [
     {
@@ -34,15 +43,7 @@ export default function LiveAuctionPage() {
       image: mobile,
     },
   ];
-  useEffect(() => {
-    socket.init();
-    setTimeout(() => {
-      socket.emit("health", { message: "socket testing" });
-    }, 1000);
-  }, []);
-  socket.on("healthResponse", async (data) => {
-    console.log(data, "=================>");
-  });
+
   return (
     <>
       <Banner
